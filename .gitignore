@@ -1,5 +1,8 @@
+# Jetbrains
+.idea/
 # CMake
-
+cmake-build-debug/
+jetbrains-build/
 build/
 ## Core latex/pdflatex auxiliary files:
 *.aux
