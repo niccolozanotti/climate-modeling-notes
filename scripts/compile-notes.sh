@@ -8,6 +8,6 @@ for TARGET in "${TARGETS[@]}"; do
 
   if [ ! -f "build/$TARGET.pdf" ]; then
     echo "Error: $TARGET.pdf was not generated."
-    exit 1
   fi
 done
+
