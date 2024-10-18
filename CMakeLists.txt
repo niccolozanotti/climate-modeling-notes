@@ -14,7 +14,7 @@ add_latex_document(cm.tex TARGET_NAME cm
 
         BIBFILES bibliography.bib
         USE_BIBLATEX
-        IMAGE_DIRS figs/CM
+        IMAGE_DIRS figs/CM figs/GD figs/NM
         #  USE_INDEX
         EXCLUDE_FROM_ALL
 )
