@@ -1,0 +1,56 @@
+name: Compile ''numerical methods'' notes and update pdf
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Allows for manual triggers
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install cmake texlive-full ghostscript
+
+      - name: Configure CMake
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+        continue-on-error: false  # Fails the workflow if CMake configuration fails
+
+      - name: Build the LaTeX document
+        run: |
+          cd build
+          cmake --build . --target nm
+        continue-on-error: false  # Fails the workflow if LaTeX compilation fails
+
+      - name: Check if PDF was generated
+        run: |
+          if [ ! -f build/nm.pdf ]; then
+            echo "Error: nm.pdf was not generated."
+            exit 1
+          fi
+
+      - name: Get current date
+        id: get-date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
+      - name: Commit and Push PDF
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git checkout main
+          cp build/nm.pdf .
+          git add nm.pdf
+          git commit -m "Notes updated ${{ steps.get-date.outputs.date }}"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
