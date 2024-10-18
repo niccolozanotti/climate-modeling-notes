@@ -15,14 +15,14 @@ introduction}}{Historical introduction}}\label{historical-introduction}
 
 It is considered that Wilhelm Bjerknes (1904) was the first to point out
 that the future state of the atmosphere can in principle be obtained by
-an integration of differenÂ­tial equations which govern the behaviour of
-the atmoÂ­sphere, using as initial values fields describing an observed
+an integration of differential equations which govern the behaviour of
+the atmosphere, using as initial values fields describing an observed
 state of the atmosphere. Such an integration performed using numerical
 methods is called numerical weather prediction. When, however, a
 numerical integration is performed starting from fictitious initial
 fields, it is called numerical simulation.
 
-A first practical attempt at a numerical weather predicÂ­tion was made by
+A first practical attempt at a numerical weather prediction was made by
 Richardson. After very tedious and time-consuming computations, carried
 out mostly during the First World War, Richardson obtained a totally
 unacceptable result. Despite this, he described his method and results
@@ -48,9 +48,9 @@ numerical forecast (Charney et al., 1950).
 
 Much faster computers, and improved understanding of computational
 problems, now also enable long-term integrations of the basic primitive
-equations. It is generÂ­ally considered that integration of the primitive
+equations. It is generally considered that integration of the primitive
 equations enables easier incorporation of various physical processes
-than the integration of modified equations, that is, inteÂ­gration of the
+than the integration of modified equations, that is, integration of the
 divergence and vorticity equations. Thus, it is mostly the primitive
 equations that are used today for practical numerical forecasting by
 meteorological services. Charts obtained by numerical forecasting are
@@ -69,7 +69,7 @@ much, prior information on these properties.
 
 Numerical models are also very frequently developed for studies of some
 smaller-scale atmospheric phenomena. Foremost among these are studies of
-the cumulus convecÂ­tion problem, and simulation of processes within the
+the cumulus convection problem, and simulation of processes within the
 planetary boundary layer. In this text, however, we shall primarily have
 in mind the application of numerical methods to prediction and
 simulation of large-scale atmospheric motions.
@@ -93,22 +93,22 @@ an approach which is at least partly Lagrangian. Serious difficulties
 are encountered when a straightforward numerical integration of the
 Lagrangian system of equations is undertaken. However, it is possible to
 construct methods with some Lagrangianproperties ; for example, to have
-some or all of the compuÂ­tation points moving with the fluid. In
+some or all of the computation points moving with the fluid. In
 hydrodynamics a number of such methods have proved to be very useful,
 especially for some problems which are not amenable to treatment by a
 strictly Eulerian technique (e.g. Harlow and Amsden, 1971). However, in
-meteorology the perÂ­formance of Lagrangian or semi-Lagrangian models
-that have so far been developed has not been quite satisÂ­factory. A
+meteorology the performance of Lagrangian or semi-Lagrangian models
+that have so far been developed has not been quite satisfactory. A
 discussion of one way of constructing a Lagrangian model, and a review
 of earlier attempts, can be found in a paper by Mesinger (1971).
 
 Another possible approach is to express the spatial dependence of the
-variables in terms of a series of orthoÂ­gonal functions, and then
+variables in terms of a series of orthogonal functions, and then
 substitute this into the governing equations. In this way the equations
 reduce to a set of ordinary differential equations, so that the
 coefficients of the series can be computed as functions of time. This is
 the \emph{spectral method} of solving the governing equations. Until
-relatively recently it was considered that in effiÂ­ciency the spectral
+relatively recently it was considered that in effiÂciency the spectral
 method could not be competitive with the grid point method. But the use
 of the fast Fourier transform has completely changed the situation and
 investigation of spectral methods is now the subject of intensive
@@ -118,7 +118,7 @@ In the following we shall consider the technique of using the grid point
 method, and the problems associated with it, using grid of computation
 points fixed in space. This is the most direct way of solving the
 equations of motion numerically. Furthermore, knowledge of this method
-is necessary for the investigation and underÂ­standing of the relative
+is necessary for the investigation and understanding of the relative
 merits of other alternatives mentioned in this section.
 
 \subsection{\texorpdfstring{\textbf{Basic elements of the grid point
@@ -135,8 +135,8 @@ approximations for derivatives are then used to construct a system of
 algebraic equations that approximates the governing partial differential
 equations. This algebraic system is considered valid at each of the
 interior grid points of the computation region. For the initial time and
-at space boundary points, additional constraints or equaÂ­tions are
-defined that approximate the initial and boundÂ­ary conditions as
+at space boundary points, additional constraints or equations are
+defined that approximate the initial and boundary conditions as
 required by the physics of the problem. The set of algebraic equations
 obtained in this way is then solved, usually using an electronic
 computer, by a suitable step-wise procedure.
@@ -148,8 +148,8 @@ independent variable
 \[u = u(x)\]
 
 The function \emph{u} is a solution to a differential equation that we
-are interested in. We want to find an approximaÂ­tion to this solution in
-a bounded region R of the indeÂ­pendent variable, having a length
+are interested in. We want to find an approximation to this solution in
+a bounded region R of the independent variable, having a length
 \emph{L}. The simplest way of introducing a set of grid points is to
 require that they divide the region R into an integer number of
 intervals of equal length \(\Delta x\). This length \(\Delta x\) is
@@ -170,9 +170,9 @@ approximations were perfect, offers, obviously, less information than
 knowledge of the function \emph{u} (\emph{x}). Let us briefly consider
 the situation in that respect. We shall very often find it convenient to
 think of the function \emph{u} (\emph{x}) as being formed by a sum of
-its Fourier compoÂ­nents, that is
+its Fourier components, that is
 
-\[u( x ) = \frac{a_{0}}{2} + \sum_{n \geq 1}(\left[  a_{n}  \cos\left(2\pi n \frac{x}{L}\right) 
+\[u( x ) = \frac{a_{0}}{2} + \sum_{n \geq 1}(\left[  a_{n}  \cos\left(2\pi n \frac{x}{L}\right)
 + b_{n}   \sin\left(2\pi n \frac{x}{L} \right))\right]\]
 
 Now, the available \emph{J} + 1 values \(u_j\) do not enable the
@@ -189,10 +189,10 @@ length
 
 Having made that choice, we can say that with values \(u_{j}\) at
 discrete points \(\mathcal{x =}j\Delta\mathcal{x}\) it is not possible
-to resolve waves with wave length shorter than 2 \emph{â} x.
+to resolve waves with wave length shorter than $2 \Delta x$.
 
 Now let us consider the differences between values u\} that will be used
-to construct approximations to derivaÂ­tives. These differences are
+to construct approximations to derivatives. These differences are
 called \emph{finite differences}. They can be calculated over one or
 more of the intervals Ax. Depending on the relation of the points from
 which the values are taken to the point where the derivative is
@@ -208,18 +208,18 @@ More often centered (or \emph{central}) differences are used, such as
 In a centered difference the difference is between values symmetrical
 about the point where the difference is being calculated.
 
-One way to construct an approximation to a differenÂ­tial equation is to
-simply replace the derivatives by approÂ­priate \emph{finite difference
+One way to construct an approximation to a differential equation is to
+simply replace the derivatives by appropriate \emph{finite difference
 quotients}. For example, for the first derivative one can use the
 approximation
 
-{\[\left( \frac{d u}{d x } \right)_j \to \frac{u_{j + 1} - u_{j}}{\Delta x}\]}
+    {\[\left( \frac{d u}{d x } \right)_j \to \frac{u_{j + 1} - u_{j}}{\Delta x}\]}
 
 The finite difference quotient here is, of course, only one of many
 possible approximations to the first derivative at point j.
 
 If a finite difference quotient, or a more complex expression, is to be
-used as an approximation to a deriÂ­vative, it is required, above all,
+used as an approximation to a derivative, it is required, above all,
 that this approximation be consistent. This means that the approximation
 should approach the derivative when the grid interval approaches zero.
 The quotient \texttt{3.1} , obviously, has that property.
@@ -246,7 +246,7 @@ being approximated. In this case
 is called the truncation error of the approximation to the derivative.
 These are terms that were "truncated off" to form the approximation. The
 truncation error gives a measure of how accurately the difference
-quotient approximates the derivative for small values of âx.
+quotient approximates the derivative for small values of $\Delta x$.
 
 The usual measure of this is the order of accuracy of an approximation.
 This is the lowest power of Ax that appears in the truncation error.
@@ -270,7 +270,7 @@ difference scheme.
 
 As an example, we shall use the linear advection equation
 
-{\[\frac{\partial u}{\partial t} +c\frac{\partial u}{\partial x } = 0; u =u(x,t)\]}
+    {\[\frac{\partial u}{\partial t} +c\frac{\partial u}{\partial x } = 0; u =u(x,t)\]}
 
 \emph{c} is a positive constant.
 
@@ -305,17 +305,17 @@ Thus, it is seen that U cannot be a function of t, but can be an
 arbitrary function of \(\xi\). A solution of \texttt{g4.1} is,
 therefore,
 
-{\[u = f(x - ct)\]}
+    {\[u = f(x - ct)\]}
 
 where \emph{f} is an arbitrary function. This, we see, is the general
 solution of the advection equation \texttt{g4.1}, since it can satisfy
 an arbitrary initial condition
 
-{\[u(x,0) = F(x)\]}
+    {\[u(x,0) = F(x)\]}
 
 Thus,
 
-{\[u = F \left( x - ct \right)\]}
+    {\[u = F \left( x - ct \right)\]}
 
 is the solution of \texttt{g4.1} satisfying the initial condition
 \texttt{g4.3}.
@@ -326,18 +326,18 @@ solution takes constant values along the straight lines
 
 \[x - ct = const.\]
 
-These lines are the \emph{characteristics} of the advection equaÂ­tion ;
+These lines are the \emph{characteristics} of the advection equation ;
 one of them is shown in \texttt{figg:1}. We can say that the solution
 propagates along the characteristics.
 
 \begin{figure}
-\centering
-\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{./pictest/pic1.jpg}
-\caption{One of the characteristics of the linear advection equation
-\texttt{g4.1}}
+    \centering
+    \includegraphics[width=0.8\linewidth,height=\textheight,width = .7 \textwidth]{figs/NM/pic1.jpg}
+    \caption{One of the characteristics of the linear advection equation
+    \texttt{g4.1}}
 \end{figure}
 
-Let us now construct a scheme for finding an approxiÂ­mate solution to
+Let us now construct a scheme for finding an approximate solution to
 \texttt{g4.1} using the grid point method.
 
 We are now looking only for an approximate solution at the discrete
@@ -346,9 +346,9 @@ points in the \((x,t)\) plane formed by the grid shown in Fig.
 \(\left( j\Delta x, n\Delta t) \right)\) is denoted by \(u_{j}^{n}\).
 
 \begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{./pictest/pic2.jpg}}
-\caption{}
+    \centering
+    \includegraphics[width = .7 \textwidth]{figs/NM/pic2.jpg}
+    \caption{} \label{fig:}
 \end{figure}
 
 The behaviour of the true solution, which propagates along
@@ -357,7 +357,7 @@ approximate equation by replacing the time derivative by a forward
 difference quotient, and the space derivative by a backward difference
 quotient. In this way we obtain the scheme
 
-{\[\frac{u_{j}^{n + 1} - u_{j}^{n}}{\Delta t} + c\frac{u_j^n - u_{j - 1}^n}{\Delta x} = 0\]}
+    {\[\frac{u_{j}^{n + 1} - u_{j}^{n}}{\Delta t} + c\frac{u_j^n - u_{j - 1}^n}{\Delta x} = 0\]}
 
 This scheme could be called a forward and upstream scheme, the latter
 word indicating the position of the point \(j - 1\) relative to the
@@ -378,7 +378,7 @@ solutions of the original differential equation, which we shall refer to
 as true solutions. The difference between the numerical and the true
 solution
 
-{\[u_{j}^{n}-u ( j\Delta x,n\Delta t )\]}
+    {\[u_{j}^{n}-u ( j\Delta x,n\Delta t )\]}
 
 is the error of the numerical solution.
 
@@ -391,9 +391,9 @@ equations exactly, we will have to add an additional term to keep the
 equation valid. Let us denote this term by \(\varepsilon\) . For
 example, in the case of scheme \texttt{g4.5} this procedure gives
 
-{\[\frac{u\left( j\Delta x,( n + 1 )\Delta t \right)
-- u\left( j\Delta x,\Delta\text{nt} \right)}{\Delta t} 
-+ c\frac{u\left( j\Delta x,n\Delta t \right) 
+    {\[\frac{u\left( j\Delta x,( n + 1 )\Delta t \right)
+    - u\left( j\Delta x,\Delta\text{nt} \right)}{\Delta t}
++ c\frac{u\left( j\Delta x,n\Delta t \right)
 - u\left( \left( j - 1 \right)\Delta x,\Delta t \right)}{\Delta x} = \varepsilon\]}
 
 The term e we shall call the truncation error of the finite difference
@@ -406,7 +406,7 @@ the central space and time point. Using the original differential
 equation to eliminate the leading term we obtain the truncation error
 \texttt{g4.7} as
 
-{\[\varepsilon = \frac{1}{2}\frac{\partial^{2u}}{{\partial t}^{2}}\Delta t 
+    {\[\varepsilon = \frac{1}{2}\frac{\partial^{2u}}{{\partial t}^{2}}\Delta t
 + \frac{1}{6}\frac{\partial^{3}u}{{\partial t}^{3}}\left( \Delta t \right)^{2} +\ldots-
 c(\frac{1}{2}\frac{\partial^{2}u}{{\partial x}^{2}}\Delta x -
 \frac{1}{6}\frac{\partial^{3}u}{{\partial t}^{3}}\left( \Delta x \right)^{2}
@@ -415,7 +415,7 @@ c(\frac{1}{2}\frac{\partial^{2}u}{{\partial x}^{2}}\Delta x -
 As before, these are the terms that were "truncated off" to make the
 differential equation reduce to our finite difference scheme.
 
-In the same way as for an approximation to the deriÂ­vative, the order of
+In the same way as for an approximation to the derivative, the order of
 accuracy of a finite difference scheme is the lowest power of Ax and At
 that appears in the truncation error. Thus, scheme \texttt{g4.5} is
 first order accurate. We can write
@@ -460,12 +460,12 @@ refined ( as \(\Delta x, \Delta t \rightarrow 0\) ) the solution is
 called convergent. If a scheme gives a convergent solution for any
 initial conditions, then the scheme also is called convergent.
 
-Consistency of a scheme does not guarantee converÂ­gence. We shall
+Consistency of a scheme does not guarantee convergence. We shall
 illustrate this by a simple example. We still consider the scheme
 \texttt{g4.5}; its truncation error \texttt{g4.8} approaches zero as the
-grid is refined, and, thereÂ­fore, this is a consistent scheme. But
+grid is refined, and, therefore, this is a consistent scheme. But
 consider the numerical solution, when the grid lines and
-characterÂ­istics are as shown in \texttt{figg:3}. The characteristic
+characteristics are as shown in \texttt{figg:3}. The characteristic
 passing through the grid point taken as the origin in this example
 passes through another grid point, A, denoted by a square. Thus, the
 true solution at A, is equal to the initial value at the origin. However
@@ -484,26 +484,26 @@ about a reduction in the error of the numerical solution.
 \[x - ct = const\]
 
 \begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{./pictest/pic3.jpg}}
-\caption{}
+    \centering
+    \includegraphics[width = .7 \textwidth]{figs/NM/pic3.jpg}
+    \caption{} \label{fig:}
 \end{figure}
 
 A necessary condition for convergence of a scheme is, obviously, that
-the characteristic defining the true soluÂ­tion at a grid point is inside
+the characteristic defining the true solution at a grid point is inside
 the domain of dependence of the numerical solution at that point. In our
 example, this will happen when the slope of the characteristics is
 greater than the slope of the dashed line bounding the domain of
 dependence, that is, when
 
-{\[c\Delta t \leq \Delta x\]}
+    {\[c\Delta t \leq \Delta x\]}
 
 Thus, this is a necessary condition for convergence of \texttt{g4.5}.
 
 \subsection{\texorpdfstring{\textbf{Stability}}{Stability}}\label{stability}
 
-The answer to the second question raised at the beginÂ­ning of the
-Section \texttt{Section1.5} depends on the stability of the numerÂ­ical
+The answer to the second question raised at the beginning of the
+Section \texttt{Section1.5} depends on the stability of the numerical
 solution. A rigorous definition of stability employs the concepts of
 functional analysis, and refers to the boundedness of the numerical
 solution only (e.g. Richt-myer and Morton, 1967). The difficulties in
@@ -526,10 +526,10 @@ we shall give an example of each of these methods. We shall do this by
 considering again the forward and upstream scheme \texttt{g4.5}).
 
 \emph{Direct method}. Since we know that the true solution is bounded,
-it suffices to test the boundedness of the numerÂ­ical solution. The
+it suffices to test the boundedness of the numerical solution. The
 scheme \texttt{g4.5} can be written as
 
-{\[u_{j}^{n + 1} = \left( 1 - \mu \right)u_{j}^{n}+ \mu u_{j - 1}^{n}\]}
+    {\[u_{j}^{n + 1} = \left( 1 - \mu \right)u_{j}^{n}+ \mu u_{j - 1}^{n}\]}
 
 where
 
@@ -538,7 +538,7 @@ where
 If \(1 - \mu \geq 0,\) which happens to be also the necessary condition
 for convergence, we will have
 
-{\[\left| u_{j}^{n + 1} \right| \leq \left( 1 - \mu \right)\left| u_{j}^{n} \right| + \mu\left| u_{j - 1}^{n} \right|.\]}
+    {\[\left| u_{j}^{n + 1} \right| \leq \left( 1 - \mu \right)\left| u_{j}^{n} \right| + \mu\left| u_{j - 1}^{n} \right|.\]}
 
 We can apply this at the point where at time level \emph{n + 1} ,
 \(\left| u_{j}^{n + 1} \right|\) is a maximum,
@@ -575,23 +575,23 @@ Of course, there are examples when this is not so.
 
 Squaring \texttt{g6.1} and summing over \emph{j} we obtain
 
-{\[{\sum_{j}^{}\left( u_{j}^{n + 1} \right)}^{2} =
-\sum_{j}^{}\left\lbrack \left( 1 - \mu \right)^{2}\left( u_{j}^{n} \right)^{2} + 
+    {\[{\sum_{j}^{}\left( u_{j}^{n + 1} \right)}^{2} =
+\sum_{j}^{}\left\lbrack \left( 1 - \mu \right)^{2}\left( u_{j}^{n} \right)^{2} +
 2\mu\left( 1 - \mu \right)u_{j}^{n}u_{j - 1}^{n} + \mu^{2}\left( u_{j - 1}^{n} \right)^{2} \right\rbrack\]}
 
 We shall assume a cyclic boundary condition, for example
 \(u_{- 1} \equiv u_{j}\), then
 
-{\[{\sum_{j}^{}\left( u_{j - 1}^{n} \right)}^{2} =  {\sum_{j}^{}\left( u_{j}^{n} \right)}^{2}\]}
+    {\[{\sum_{j}^{}\left( u_{j - 1}^{n} \right)}^{2} =  {\sum_{j}^{}\left( u_{j}^{n} \right)}^{2}\]}
 
-Now, using Schwarzâs inequality
+Now, using Schwarz inequality
 
 \[\sum_{}^{}{ab \leq \sqrt{\sum_{}^{}a^{2}}}\sqrt{\sum_{}^{}b^{2}}\]
 
 and \texttt{g6.4}, we can write
 
-{\[\sum_{j}^{}u_{j}^{n}u_{j - 1}^{n} \leq \sqrt{\sum_{j}^{}\left( u_{j}^{n} \right)^{2}}\sqrt{\sum_{j}^{}
-\left( u_{j - 1}^{n} \right)^{2}} =\sum_{j}^{}\left( u_{j}^{n} \right)^{2}\]}
+    {\[\sum_{j}^{}u_{j}^{n}u_{j - 1}^{n} \leq \sqrt{\sum_{j}^{}\left( u_{j}^{n} \right)^{2}}\sqrt{\sum_{j}^{}
+    \left( u_{j - 1}^{n} \right)^{2}} =\sum_{j}^{}\left( u_{j}^{n} \right)^{2}\]}
 
 Using \texttt{g6.4} and \texttt{g6.5} we see that, if
 \(1 - \mu \geq 0\), \texttt{g6.3} gives the inequality
@@ -603,7 +603,7 @@ or
 
 \[{\sum_{j}^{}\left( u_{j}^{n + 1} \right)}^{2} \leq \sum_{}^{}\left( u_{j}^{n} \right)^{2}\]
 
-Thus, \( 1 - \mu \leq 0\), coupled with the cyclic boundary condiÂ­tion,
+Thus, \( 1 - \mu \leq 0\), coupled with the cyclic boundary condition,
 is proved to be a sufficient condition for stability of \texttt{g6.1}.
 
 \emph{Von Neumann\textquotesingle s method}. Von
@@ -625,7 +625,7 @@ analytic solution of the equation \texttt{g4.1}
 
 in the form of a single harmonic
 
-{\[u\left( x,t \right) = Re\left\lfloor U\left( t \right)e^{\text{ikx}} \right\rfloor\]}
+    {\[u\left( x,t \right) = Re\left\lfloor U\left( t \right)e^{\text{ikx}} \right\rfloor\]}
 
 Here \emph{U(t)} is the wave amplitude, and k the wave number.
 Substituting this into the preceding equation we obtain
@@ -633,7 +633,7 @@ Substituting this into the preceding equation we obtain
 \[\frac{\text{dU}}{d t} +ikU = 0\]
 
 Thus, the problem of solving a partial differential equation has been
-reduced to that of solving this ordinary differenÂ­tial equation. Its
+reduced to that of solving this ordinary differential equation. Its
 solution is
 
 \[U(t) =U(0)e^{- ikct}\]
@@ -641,7 +641,7 @@ solution is
 where U(0) is the initial value of the amplitude. Hence, the desired
 harmonic solution is
 
-{\[u\left( x,t \right) =Re \left\lbrack U\left( 0 \right)e^{\text{ik}\left( x - ct \right)} \right\rbrack\]}
+    {\[u\left( x,t \right) =Re \left\lbrack U\left( 0 \right)e^{\text{ik}\left( x - ct \right)} \right\rbrack\]}
 
 Each wave component is, thus, advected at a constant velocity c along
 the x axis with no change in amplitude.
@@ -650,12 +650,12 @@ Returning to the von Neumann method, we now look for an analogous
 solution of the finite difference equation \texttt{g6.1}. Into this
 equation we substitute a solution of the form
 
-{\[u_{j}^{n} = Re \left\lbrack U^{\left( u \right)}e^{ikj\Delta x} \right\rbrack\]}
+    {\[u_{j}^{n} = Re \left\lbrack U^{\left( u \right)}e^{ikj\Delta x} \right\rbrack\]}
 
 Here \(U^{\text{n }}\) is the amplitude at time level n. This
-substituÂ­tion shows that \texttt{g6.8} is a solution provided that
+substitution shows that \texttt{g6.8} is a solution provided that
 
-{\[U^{n + 1} = \left( 1 - \mu \right)U^{\left( n \right)}  + \mu U^{\left( n \right)}e^{- ik\Delta x}\]}
+    {\[U^{n + 1} = \left( 1 - \mu \right)U^{\left( n \right)}  + \mu U^{\left( n \right)}e^{- ik\Delta x}\]}
 
 An equation of this kind enables analysis of the behavior of the
 amplitude \(U^{\text{n }}\) as n increases.
@@ -663,7 +663,7 @@ amplitude \(U^{\text{n }}\) as n increases.
 To this end we define an \emph{amplification factor}
 \(\left| \lambda \right|\) by
 
-{\[U^{n + 1} \equiv \lambda U^{n}\]}
+    {\[U^{n + 1} \equiv \lambda U^{n}\]}
 
 This gives
 
@@ -682,7 +682,7 @@ where \emph{B\textquotesingle{}} is a new constant. Since
 \(n = \frac{t}{\Delta t}\), the necessary condition for stability
 becomes
 
-{\[\log |\lambda | \leq \frac{B'}{t} \Delta t\]}
+    {\[\log |\lambda | \leq \frac{B'}{t} \Delta t\]}
 
 Now, suppose that we require boundedness of the solution for a finite
 time \emph{t}. Condition \texttt{g6.11} can then be written as
@@ -701,7 +701,7 @@ is equivalent to
 
 or
 
-{\[|\lambda| \leq 1 + O (\Delta t)\]}
+    {\[|\lambda| \leq 1 + O (\Delta t)\]}
 
 This is the \emph{von Neumann necessary condition for stability}.
 
@@ -711,17 +711,17 @@ true solution grows exponentially. However, when we know that the true
 solution does not grow, as in our example \texttt{g6.7}, it is customary
 to replace \texttt{g6.12} by a sufficient condition
 
-{\[|\lambda| \leq 1\]}
+    {\[|\lambda| \leq 1\]}
 
 This condition is much less generous than that required by the original
 definition of stability. Returning to our example, substitution of
 \texttt{g6.10} into \texttt{g6.9} gives
 
-{\[\lambda = 1 - \mu + \mu e^{-ik\Delta x}\]}
+    {\[\lambda = 1 - \mu + \mu e^{-ik\Delta x}\]}
 
 From this we obtain
 
-{\[\lambda^{2} =1 - 2\mu\left( 1 - \mu \right)\left( 1 - \cos{k\Delta x} \right)\]}
+    {\[\lambda^{2} =1 - 2\mu\left( 1 - \mu \right)\left( 1 - \cos{k\Delta x} \right)\]}
 
 and, therefore, \(1 - \mu \geq 0 \) is again found to be a sufficient
 condition for stability of \texttt{g6.1}.
@@ -750,9 +750,9 @@ the ordiÂ­nales of \texttt{g6.15} at \(\mu = \frac{0.1}{2}\) and 1,
 suffices for sketching
 
 \begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{./pictest/pic4.jpg}}
-\caption{}
+    \centering
+    \includegraphics[width = .7 \textwidth]{figs/NM/pic4.jpg}
+    \caption{} \label{fig:}
 \end{figure}
 
 the graphs of the \(\left| \lambda \right|^{2}\) curves as shown in

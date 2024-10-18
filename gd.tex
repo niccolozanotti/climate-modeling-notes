@@ -1,0 +1,68 @@
+%\documentclass[oneside]{book}
+
+\documentclass[
+    11pt, % The default document font size, options: 10pt, 11pt, 12pt
+%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+    english, % ngerman for German
+    oneside
+]{book} % The class file specifying the document structure
+
+\usepackage{setup} % preamble with commands
+\usepackage{theorems}
+\usepackage{commands}
+
+% Define Document Variables
+% Variables
+\def\notetitle{GLOBAL DYNAMICS}
+\def\noteauthor{
+    \textbf{Professor} Antonio Navarra \\
+    by Niccolò Zanotti\\
+    University of Bologna\\
+    Updated \today}
+\def\notedate{2024/2025}
+
+% ------------------------------------------------------------------------------
+
+\begin{document}
+    \title{\textbf{
+        \LARGE{\notetitle} \vspace*{10\baselineskip}}
+    }
+    \author{\noteauthor}
+    \date{\notedate}
+
+    \maketitle
+    \newpage
+
+    \tableofcontents
+    \newpage
+
+% ------------------------------------------------------------------------------
+
+\chapter{Introduction}
+
+    \input{GD/introduction}
+
+\chapter{Circulation}
+
+    \input{GD/circulation-theorems-ertel-potential-vorticity}
+%\input{GD/homogeneous-flows}
+%\input{GD/quasi-geostrophic-potential-vorticity}
+%\input{GD/vorticity-equation}
+%\input{GD/flows-over-topography}
+%\input{GD/waves-oscillations}
+%\input{GD/energetics}
+%\input{GD/atmospheric-general-circulation}
+%\input{GD/energy-balance}
+%\input{GD/oceanic-general-circulation}
+%\input{GD/heat-momentum-sources}
+%\input{GD/theory-symmetric-circulation}
+%\input{GD/tropical-waves}
+%\input{GD/appendix}
+
+% \chapter{Numerical Methods}
+
+% \input{NM/numerical-methods-raw}
+
+    \printbibliography
+
+\end{document}

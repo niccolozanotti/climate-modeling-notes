@@ -66,7 +66,7 @@ consideration in choosing a scheme.
 
 To define some schemes, we consider the equation
 
-{\[\frac{\text{dU}}{\text{dt}} = f( U,t) \quad  U = U(t)\]}
+\[\frac{\text{dU}}{\text{dt}} = f( U,t) \quad  U = U(t)\]
 
 The independent variable t is here called time. We divide the time axis
 into segments of equal length \(\Delta t\). We shall denote by
@@ -85,17 +85,17 @@ advance an integration over the first time step, when just a single
 initial condition is available. With such a scheme we want to
 approximate the exact formula
 
-{\[U^{( n + 1 )} = U^{\left( n \right)} + \int_{n\Delta t}^{(n+1)\Delta t}f\left( U,t \right)\text{dt}\]}
+\[U^{( n + 1 )} = U^{\left( n \right)} + \int_{n\Delta t}^{(n+1)\Delta t}f\left( U,t \right)\text{dt}\]
 
 We shall first list several schemes which do not use an iterative
 procedure.
 
 \paragraph{\texorpdfstring{\emph{Euler (or forward)
-scheme}}{Euler (or forward) scheme}}\label{euler-or-forward-scheme}
+    scheme}}{Euler (or forward) scheme}}\label{euler-or-forward-scheme}
 
 This is the scheme
 
-{\[U^{\left( n + 1 \right)} = U^{\left( n \right)} + \Delta t \bullet f^{\left( n \right)}\]}
+\[U^{\left( n + 1 \right)} = U^{\left( n \right)} + \Delta t \bullet f^{\left( n \right)}\]
 
 where
 
@@ -115,7 +115,7 @@ scheme}}{Backward scheme}}\label{backward-scheme}
 We can also take a constant value of \(f\) equal to that at the upper
 boundary of the time interval. We then obtain
 
-{\[U^{( n + 1 )} = U^{( n )} + \Delta t  f^{\left( n + 1 \right)}\]}
+\[U^{( n + 1 )} = U^{( n )} + \Delta t  f^{\left( n + 1 \right)}\]
 
 If, as here, a value of \(f\) depending on \(U^{\left( n + 1 \right)}\)
 appears in the difference equation, the scheme is called implicit. For
@@ -135,7 +135,7 @@ If we approximate \(f\) in \texttt{h1.2} by an average of the values at
 the beginning and the end of the time interval, we obtain the
 trapezoidal scheme
 
-{\[U^{( n + 1 )} = U^{( n )} + \frac{1}{2}\Delta t\left( f^{( n )} + f^{( n + 1 )} \right)\]}
+\[U^{( n + 1 )} = U^{( n )} + \frac{1}{2}\Delta t\left( f^{( n )} + f^{( n + 1 )} \right)\]
 
 This is also an implicit scheme. Its truncation error, however, is
 \(O\left[ \left( {\Delta t}^{2} \right) \right]\).
@@ -146,14 +146,14 @@ in the same way as :eq: {h1.4} and :eq: {h1.5}, except that an iterative
 procedure is used to make them explicit.
 
 \paragraph{\texorpdfstring{\emph{Matsuno (or Euler-backward)
-scheme}}{Matsuno (or Euler-backward) scheme}}\label{matsuno-or-euler-backward-scheme}
+    scheme}}{Matsuno (or Euler-backward) scheme}}\label{matsuno-or-euler-backward-scheme}
 
 With this scheme a step is made first using the Euler scheme ; the value
 of U obtained for time level n + 1 is then used for an approximation to
 \(f^{\left( n + 1 \right)}\), and this approximate value
 \(f^{*\left( n + 1 \right)}\) is used to make a backward step. Thus,
 
-{\[U^{*\left( n + 1 \right)} = U^{\left( n \right)} + \Delta t  f^{\left( n \right)}\]\[U^{n + 1} = U^{\left( n \right)} + \Delta t  {f^{*\left( n + 1 \right)}}\]}
+\[U^{*\left( n + 1 \right)} = U^{\left( n \right)} + \Delta t  f^{\left( n \right)}\]\[U^{n + 1} = U^{\left( n \right)} + \Delta t  {f^{*\left( n + 1 \right)}}\]
 
 where
 
@@ -167,7 +167,7 @@ scheme}}{Heun scheme}}\label{heun-scheme}
 Here, in much the same way, an approximation is constructed to the
 trapezoidal scheme. Thus,
 
-{\[U^{*\left( n + 1 \right)} = U^{\left( n \right)} + \Delta t  f^{\left( n \right)}\]}
+\[U^{*\left( n + 1 \right)} = U^{\left( n \right)} + \Delta t  f^{\left( n \right)}\]
 
 \[U^{\left( n + 1 \right)} = U^{\left( n \right)} + \frac{1}{2}\Delta t\left( f^{\left( n \right)} + f^{*\left( n + 1 \right)} \right)\]
 
@@ -183,7 +183,7 @@ this additional information.
 
 These are three level schemes. They may approximate the formula
 
-{\[U^{( n + 1 )} = U^{( n - 1 )} + \int_{( n - 1 )\Delta t}^{( n + 1 )\Delta t}f\left( U,t \right)\text{dt}\]}
+\[U^{( n + 1 )} = U^{( n - 1 )} + \int_{( n - 1 )\Delta t}^{( n + 1 )\Delta t}f\left( U,t \right)\text{dt}\]
 
 or, they can use the additional value \(U^{\left( n - 1 \right)}\) to
 make a better approximation to \(f\) in \texttt{h1.2}.
@@ -194,7 +194,7 @@ The simplest way of making a centered evaluation of the integral in
 \texttt{h1.8} is to take for \(f\) a constant value equal to that at the
 middle of the interval \(2\Delta t\). This gives the leapfrog scheme
 
-{\[U^{\left( n + 1 \right)} = U^{\left( n - 1 \right)} + 2\Delta t \bullet f^{\left( n \right)}\]}
+\[U^{\left( n + 1 \right)} = U^{\left( n - 1 \right)} + 2\Delta t \bullet f^{\left( n \right)}\]
 
 Its truncation error is
 \( O\left\lbrack \left( {\Delta t}^{2} \right) \right\rbrack\). This is
@@ -211,7 +211,7 @@ approximated by a value obtained at the centre of the interval
 \(\Delta t\) by a linear extrapolation using values
 \(f^{\left( n - 1 \right)}\) and \(f^{\left( n \right)}\). This gives
 
-{\[U^{\left( n + 1 \right)} = U^{\left( n \right)} + \Delta t\left( \frac{3}{2}f^{\left( n \right)} - \frac{1}{2}f^{\left( n - 1 \right)} \right)\]}
+\[U^{\left( n + 1 \right)} = U^{\left( n \right)} + \Delta t\left( \frac{3}{2}f^{\left( n \right)} - \frac{1}{2}f^{\left( n - 1 \right)} \right)\]
 
 This also is a second order accurate scheme.
 
@@ -245,7 +245,7 @@ atmospheric models it is of particular interest to consider the case
 
 that is, the equation
 
-{\[\frac{dU}{dt} = i\omega U, U = U\left( T \right)\]}
+\[\frac{dU}{dt} = i\omega U, U = U\left( T \right)\]
 
 Equation \texttt{h2.1} we shall call the oscillation equation. The word
 frequency equation is also used. We allow U to be complex; then
@@ -296,11 +296,11 @@ atmosphere.
 
 The general solution of \texttt{h2.1} is
 
-\(U\left( t \right)\) = \(U\left( 0 \right)e^{\text{iÏt}}\)
+\(U\left( t \right)\) = \(U\left( 0 \right)e^{i \omega t}\)
 
 or, for discrete values \(t = n\Delta t\)
 
-{\[U( n \Delta t ) = U( 0 )e^{i n \omega \Delta t}\]}
+\[U( n \Delta t ) = U( 0 )e^{i n \omega \Delta t}\]
 
 Thus, considering the solution in a complex plane, its argument rotates
 by \(\omega\Delta t\) in each time step and \(\Delta t\) there is no
@@ -310,15 +310,15 @@ The properties of various schemes when applied to \texttt{h2.1} are
 conveniently analyzed using the von Neumann method. This method, as we
 have seen, involves defining a variable \(\lambda\) by
 
-{\[U^{n + 1} \equiv \lambda U^{\left( n \right)}\]}
+\[U^{n + 1} \equiv \lambda U^{\left( n \right)}\]
 
 We also write
 
-{\[\lambda \equiv | \lambda |e^{i\theta}\]}
+\[\lambda \equiv | \lambda |e^{i\theta}\]
 
 Thus, the numerical solution can formally be written as
 
-{\[U^{( n )} = | \lambda |^{n}U^{( 0 )}e^{i n \theta}\]}
+\[U^{( n )} = | \lambda |^{n}U^{( 0 )}e^{i n \theta}\]
 
 We see that \(\theta\) represents the change in argument (or phase
 change) of the numerical solution in each time step.
@@ -328,15 +328,16 @@ we shall require \(| \lambda | \leq 1\) for stability.
 
 In accordance with this and \texttt{h2.5}, we shall say that a scheme is
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-unstable & \(| \lambda | > 1\) \\
-neutral & \(| \lambda | = 1\) \\
-damping (or dissipative) & \(| \lambda | < 1\) \\
-\end{longtable}
+% TODO place longtable here
+% \begin{longtable}[]{@{}ll@{}}
+% \toprule\noalign{}
+% \endhead
+% \bottomrule\noalign{}
+% \endlastfoot
+% unstable & \(| \lambda | > 1\) \\
+% neutral & \(| \lambda | = 1\) \\
+% damping (or dissipative) & \(| \lambda | < 1\) \\
+% \end{longtable}
 
 It will also be instructive to compare the phase change of the numerical
 solution per time step, \(\theta\), with that of the true solution,
@@ -344,15 +345,16 @@ solution per time step, \(\theta\), with that of the true solution,
 \(\frac{\theta}{(\omega \Delta t)}\), is the relative phase change of
 the numerical solution. Obviously, we can say that a scheme is
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Accelerating & \(\frac{\theta}{(\omega \Delta t)} > 1\) \\
-No effect on phase speed & \(\frac{\theta}{(\omega \Delta t)} = 1\) \\
-Decelerating & \(\frac{\theta}{(\omega \Delta t)} < 1\) \\
-\end{longtable}
+% TODO place longtable here
+% \begin{longtable}[]{@{}ll@{}}
+% \toprule\noalign{}
+% \endhead
+% \bottomrule\noalign{}
+% \endlastfoot
+% Accelerating & \(\frac{\theta}{(\omega \Delta t)} > 1\) \\
+% No effect on phase speed & \(\frac{\theta}{(\omega \Delta t)} = 1\) \\
+% Decelerating & \(\frac{\theta}{(\omega \Delta t)} < 1\) \\
+% \end{longtable}
 
 For accuracy, therefore, it is desirable to have both the amplification
 factor and the relative phase speed close to unity. Exceptions to this
@@ -373,7 +375,7 @@ defined in the preceding section.
 The three non-iterative two level schemes can be described by a single
 finite difference equation
 
-{\[U^{( n + 1 )} = U^{\left( n \right)} + \Delta t\left( \alpha f^{n} + \beta f^{\left( n + 1 \right)} \right)\]}
+\[U^{( n + 1 )} = U^{\left( n \right)} + \Delta t\left( \alpha f^{n} + \beta f^{\left( n + 1 \right)} \right)\]
 
 with a consistency requirement
 
@@ -386,22 +388,22 @@ scheme.
 
 Applied to the oscillation equation \texttt{h2.6} gives
 
-{\[U^{\left( n + 1 \right)} = U^{(n)} + i\omega\Delta t \left( \alpha U^n  + \beta U^{( n + 1 )}\right)\]}
+\[U^{\left( n + 1 \right)} = U^{(n)} + i\omega\Delta t \left( \alpha U^n  + \beta U^{( n + 1 )}\right)\]
 
 \begin{description}
-\item[In order to evaluate \(\lambda\).we must solve this equation for]
-\(U^{\left( n + 1 \right)}\) Denoting, for brevity,
+    \item[In order to evaluate \(\lambda\).we must solve this equation for]
+    \(U^{\left( n + 1 \right)}\) Denoting, for brevity,
 \end{description}
 
-{\[p \equiv \omega\Delta t\]}
+\[p \equiv \omega\Delta t\]
 
 we obtain
 
-{\[U^{\left( n + 1 \right)} = \frac{1 + i\alpha p}{1 - i\beta p}U^{\left( n \right)}\]}
+\[U^{\left( n + 1 \right)} = \frac{1 + i\alpha p}{1 - i\beta p}U^{\left( n \right)}\]
 
 Therefore,
 
-{\[\lambda = \frac{1 + i\alpha p}{1 - i\beta p}\]}
+\[\lambda = \frac{1 + i\alpha p}{1 - i\beta p}\]
 
 or,
 
@@ -410,28 +412,28 @@ or,
 Substituting for \(\alpha\) and \(\beta\) allows us to investigate the
 effect of particular schemes. For the Euler scheme we have
 
-{\[\lambda = 1 + ip\]}
+\[\lambda = 1 + ip\]
 
 for the backward scheme
 
-{\[\lambda = \frac{1}{1 + p^{2}}\left( 1 + ip \right)\]}
+\[\lambda = \frac{1}{1 + p^{2}}\left( 1 + ip \right)\]
 
 and, for the trapezoidal scheme,
 
-{\[\lambda = \frac{1}{1 + \frac{1}{4}p^{2}}\left( 1 - \frac{1}{4}p^{2} + ip \right)\]}
+\[\lambda = \frac{1}{1 + \frac{1}{4}p^{2}}\left( 1 - \frac{1}{4}p^{2} + ip \right)\]
 
 To test for stability we need to know \(| \lambda |\). Since the modulus
 of a ratio of two complex numbers is equaf to the ratio of their moduli,
 we can obtain the values of \(| \lambda |\) directly from
 \texttt{h2.10}. For the Euler scheme we have
 
-{\[| \lambda | = \left( 1 + p^{2} \right)^{\frac{1}{2}}\]}
+\[| \lambda | = \left( 1 + p^{2} \right)^{\frac{1}{2}}\]
 
 The Euler scheme is, thus, always unstable. It is interestÂ­ing to note
 that, if \(\Delta t\) is chosen so as to make \(p\) relatively small, we
 have
 
-{\[| \lambda | = 1 + \frac{1}{2}p^{2} + \ldots\]}
+\[| \lambda | = 1 + \frac{1}{2}p^{2} + \ldots\]
 
 This shows that
 \(| \lambda | = 1 + O\left\lbrack \left( \Delta t \right)^{2} \right\rbrack\)
@@ -443,7 +445,7 @@ quite unacceptable rate.
 
 For the backward scheme we obtain
 
-{\[| \lambda |  = \left( 1 + p^{2} \right)^{-\frac{ 1}{2}}\]}
+\[| \lambda |  = \left( 1 + p^{2} \right)^{-\frac{ 1}{2}}\]
 
 The backward scheme is, thus, stable no matter what value of is
 \(\Delta t\) chosen. Thus, it is an unconditionally stable scheme. We
@@ -464,7 +466,7 @@ filter out undesirable high frequency motions.
 
 For the trapezoidal scheme we find
 
-{\[| \lambda | = 1\]}
+\[| \lambda | = 1\]
 
 The trapezoidal scheme is, thus, always neutral. The amplitude of the
 numerical solution remains constant, just as does that of the true
@@ -476,7 +478,7 @@ equation in the same way as \texttt{h2.6}. Thus, we write
 
 \[U^{\left( n + 1 \right)^{*}} = U^{\left( n \right)} + U^{\left( n \right)} + \Delta t{ f}^{\left( n \right)}\]
 
-{\[U^{\left( n + 1 \right)} = U^{\left( n \right)} + \Delta t\left( \alpha f^{\left( n \right)} + \beta f^{*\left( n + 1 \right)} \right)\]}
+\[U^{\left( n + 1 \right)} = U^{\left( n \right)} + \Delta t\left( \alpha f^{\left( n \right)} + \beta f^{*\left( n + 1 \right)} \right)\]
 
 \[\alpha + \beta = 1\]
 
@@ -485,7 +487,7 @@ Now, \(a = 1\), \(\beta = 1\) for the Matsuno scheme, and,
 
 Applied to the oscillation equation \texttt{h2.18} gives
 
-{\[U^{\left( n + 1 \right)^{*}} = U^{\left( n \right)} + i\omega \Delta t U^n\]}
+\[U^{\left( n + 1 \right)^{*}} = U^{\left( n \right)} + i\omega \Delta t U^n\]
 
 \[U^{n + 1} = U^{\left( n \right)} + i\omega\Delta t\left( \alpha U^{\left( n \right)} + \beta U^{\left( n + 1 \right)^{*}} \right)\]
 
@@ -496,40 +498,40 @@ Eliminating \(U^{\left( n + 1 \right)^{*}}\) we obtain, again using
 
 Thus,
 
-{\[\lambda = 1 - \beta p^{2} + ip\]}
+\[\lambda = 1 - \beta p^{2} + ip\]
 
 Substituting the appropriate values of \(\beta\) we now obtain the
 values of \(\lambda\), for the two schemes. Hence, for the Matsuno
 scheme
 
-{\[\lambda = 1 - p^{2} + ip\]}
+\[\lambda = 1 - p^{2} + ip\]
 
 and for the Heun scheme
 
-{\[\lambda = 1 - \frac{1}{2}p^{2} + i p\]}
+\[\lambda = 1 - \frac{1}{2}p^{2} + i p\]
 
 To test for stability we evaluate \(| \lambda |\). For the Matsuno
 scheme we obtain
 
-{\[| \lambda | = \left( 1 - p^{2} + p^{4} \right)^{\frac{1}{2}}\]}
+\[| \lambda | = \left( 1 - p^{2} + p^{4} \right)^{\frac{1}{2}}\]
 
 Thus, the Matsuno scheme is stable if
 
 \[| p | \leq 1\]
 
 \begin{description}
-\item[In other words, to achieve stability we have to choose]
-\(\Delta t\) sufficiently small so that
+    \item[In other words, to achieve stability we have to choose]
+    \(\Delta t\) sufficiently small so that
 \end{description}
 
-{\[\Delta t \leq \frac{1}{| \omega |}\]}
+\[\Delta t \leq \frac{1}{| \omega |}\]
 
 The Matsuno scheme, thus, is conditionally stable. The higher the
 frequency, the more restrictive is the stability condition.
 
 Differentiating \texttt{h2.23} we find that
 
-{\[\frac{d |\lambda|}{d p} = \frac{p}{( 1 - p^2 + p^4 )^{\frac{1}{2}} } ( 1 - 2 p^2 )\]}
+\[\frac{d |\lambda|}{d p} = \frac{p}{( 1 - p^2 + p^4 )^{\frac{1}{2}} } ( 1 - 2 p^2 )\]
 
 Hence, the amplification factor of the Matsuno scheme has a minimum for
 \(p = 1/\sqrt{2}\). Therefore, as pointed out by Matsuno (1966a) when
@@ -545,13 +547,13 @@ characteristics can be conÂ­structed.
 
 For the Heun scheme \texttt{h2.22} gives
 
-{\[| \lambda | = \left( 1 + \frac{1}{4}p^{4} \right)^{\frac{1}{2}}\]}
+\[| \lambda | = \left( 1 + \frac{1}{4}p^{4} \right)^{\frac{1}{2}}\]
 
 This is always greater than unity. Thus, the Heun scheme is always
 unstable, like the Euler scheme. However, instead of :eq:2.15, for small
 \(p\) we now have Â­
 
-{\[| \lambda | = 1 + \frac{1}{8}p^{4} + \ldots\]}
+\[| \lambda | = 1 + \frac{1}{8}p^{4} + \ldots\]
 
 that is,
 \(\left| \text{Î»} \right| = 1 + 0\left\lbrack \left( \Delta t \right)^{4} \right\rbrack\).
@@ -562,9 +564,9 @@ the von Neumann necessary condition, the total amplification in a given
 time is reduced as the time step is reduced.)
 
 \begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{./pictest/pic5.jpg}}
-\caption{}
+    \centering
+    \includegraphics[width = .7 \textwidth]{figs/NM/pic5.jpg}
+    \caption{} \label{fig:}
 \end{figure}
 
 Figure \texttt{figg:5} Summarizes the results obtained for the five
@@ -577,20 +579,20 @@ It is also of interest to consider the phase change per time step,
 
 Using the notation
 
-{\[\lambda \equiv \lambda_{\text{re}} + i\lambda_{im}\]}
+\[\lambda \equiv \lambda_{\text{re}} + i\lambda_{im}\]
 
 we have, using \texttt{h2.4},
 
-{\[\theta = \arctan\frac{\lambda_{\text{im}}}{\lambda_{\text{re}}}\]}
+\[\theta = \arctan\frac{\lambda_{\text{im}}}{\lambda_{\text{re}}}\]
 
 or
 
-{\[\frac{\theta}{p} = \frac{1}{p}\arctan\frac{\lambda_{\text{im}}}{\lambda_{\text{re}}}\]}
+\[\frac{\theta}{p} = \frac{1}{p}\arctan\frac{\lambda_{\text{im}}}{\lambda_{\text{re}}}\]
 
 For the Euler and the backward schemes, using \texttt{h2.11} and
 \texttt{h2.12} we obtain
 
-{\[\frac{\theta}{p} = \frac{1}{p}\arctan\text{p}\]}
+\[\frac{\theta}{p} = \frac{1}{p}\arctan\text{p}\]
 
 Since the right-hand side is always less than unity, we can see that
 these two schemes are decelerating. For \(p = 1\) we have
@@ -599,7 +601,7 @@ these two schemes are decelerating. For \(p = 1\) we have
 In other cases the effect may not be so obvious. For the Matsuno scheme,
 for example, \texttt{h2.21} gives
 
-{\[\frac{\theta}{p} = \frac{1}{p}\arctan\frac{p}{1 - p^{2}}\]}
+\[\frac{\theta}{p} = \frac{1}{p}\arctan\frac{p}{1 - p^{2}}\]
 
 It is not obvious whether the right-hand side here is greater or less
 than unity. However, the behaviour of \texttt{h2.31} for all \(p\) is of
@@ -628,21 +630,21 @@ modes}\label{three-level-schemes-and-computational-modes}
 We consider first the leapfrog scheme \texttt{h1.9}. Applied to the
 oscillation equation it gives
 
-{\[U^{n + 1} = U^{( n + 1 )} + i 2\omega\Delta U^{\left( n \right)}\]}
+\[U^{n + 1} = U^{( n + 1 )} + i 2\omega\Delta U^{\left( n \right)}\]
 
 A problem with all three or more level schemes includÂ­ing this is that
 they require more than one initial condition to start the computation.
 From a physical standpoint a single initial condition
 \(U^{\left( 0 \right)}\) should have been sufficient. However, in
 addition to the physical initial condition, three level schemes require
-a computational initial condiÂ­tion \(U^{\left( 1 \right)}\)). This value
+a computational initial condition \(U^{\left( 1 \right)}\)). This value
 cannot be calculated by a three level scheme, and, therefore, it will
 usually have to be obtained using one of the two level schemes.
 
 According to \texttt{h2.3} we also have
 
-{\[U^{\left( n \right)} = \lambda U^{\left( n - 1 \right)},
-U^{\left( n + 1 \right)} = \lambda^{2}U^{\left( n - 1 \right)}\]}
+\[U^{\left( n \right)} = \lambda U^{\left( n - 1 \right)},
+U^{\left( n + 1 \right)} = \lambda^{2}U^{\left( n - 1 \right)}\]
 
 When these relations are substituted into \texttt{h2.32} we obtain
 
@@ -650,14 +652,14 @@ When these relations are substituted into \texttt{h2.32} we obtain
 
 a second degree equation for \(\lambda\). It has solutions
 
-{\[\lambda_{1} &= \sqrt{1 + p^{2}} + i p\]\[\lambda_{2} &= - \sqrt{1 - p^{2}} + i p\]}
+\[\lambda_{1} = \sqrt{1 + p^{2}} + i p\]\[\lambda_{2} = - \sqrt{1 - p^{2}} + i p\]
 
 Thus, there are \emph{two solutions} of the form
 \(U^{n + 1} = \lambda U^{( n )}\). This necessarily follows from the
-fact that we are considerÂ­ing a three level scheme; substitution of
+fact that we are considering a three level scheme; substitution of
 \texttt{h2.33} into the difference equation given by these schemes will
 always give a second degree equation for \(\lambda\). In general, an
-\emph{m} level scheme will give \emph{m â 1} solutions of the form
+\emph{m} level scheme will give $m-1$ solutions of the form
 \(U^{n + 1} = \lambda U^{\left( n \right)}\). A solution of this type
 corresponding to a single value of \(\lambda\) is called a \emph{mode}.
 
@@ -676,15 +678,15 @@ solution, and are called \emph{computational modes}.
 To clarify this situation we consider the simple case \(\omega = 0\),
 that is, the equation
 
-{\[\frac{d U}{d t} = 0\]}
+\[\frac{d U}{d t} = 0\]
 
 with the true solution
 
-{\[U = const\]}
+\[U = const\]
 
 The leapfrog scheme, applied to \texttt{h2.35}, gives
 
-{\[U^{\left( n + 1 \right)} = U^{\left( n - 1 \right)}\]}
+\[U^{\left( n + 1 \right)} = U^{\left( n - 1 \right)}\]
 
 For a given physical initial condition \(U^{\left( 0 \right)}\), we
 consider two special choices of \(U^{\left( 1 \right)}\).
@@ -721,11 +723,11 @@ solution.
 In general, since \texttt{h2.31} is a linear equation, its solution will
 be a linear combination of the two solutions
 
-\[U_{1}^{\left( n \right)} &= \lambda_{1}^{n}U_{1}^{\left( 0 \right)}\]\[U_{2}^{\left( n \right)} &= \lambda_{2}^{n}U_{2}^{\left( 0 \right)}\]
+\[U_{1}^{\left( n \right)} = \lambda_{1}^{n}U_{1}^{\left( 0 \right)}\]\[U_{2}^{\left( n \right)} = \lambda_{2}^{n}U_{2}^{\left( 0 \right)}\]
 
 Therefore, we can write
 
-{\[U^{\left( n \right)} = a\lambda_{1}^{n}U_{1}^{\left| 0 \right|} + b\lambda_{2}^{n}U_{2}^{\left( 0 \right)}\]}
+\[U^{\left( n \right)} = a\lambda_{1}^{n}U_{1}^{\left| 0 \right|} + b\lambda_{2}^{n}U_{2}^{\left( 0 \right)}\]
 
 where a and b are constants. Now this has to satisfy the physical and
 the computational initial condition; we obtain
@@ -738,8 +740,8 @@ These equations can be solved for a \(U_{1}^{\left( 0 \right)}\) and
 
 In this way we find
 
-{\[U^{(n)} = \frac{1}{\lambda_1 - \lambda_2} \left[ \lambda_1^n\left( U^{(1)}
- - \lambda_{2}U^{(0)} \right) - \lambda_2^n\left( U^1 - \lambda_{1}U^{(0)} \right) \right]\]}
+\[U^{(n)} = \frac{1}{\lambda_1 - \lambda_2} \left[ \lambda_1^n\left( U^{(1)}
+- \lambda_{2}U^{(0)} \right) - \lambda_2^n\left( U^1 - \lambda_{1}U^{(0)} \right) \right]\]
 
 Therefore, the amplitudes of the physical and of the computational modes
 are seen to be proportional to, respectively,
@@ -799,7 +801,7 @@ In \texttt{h2.34} \(1 - p^{2}\) is positive, and we obtain
 Thus, in this case both modes are stable and neutral. For the phase
 change, using \texttt{h2.28}
 
-{\[\theta_{1} = arctan\left( \frac{p}{\sqrt{1 - p^{2}}} \right)\]}
+\[\theta_{1} = arctan\left( \frac{p}{\sqrt{1 - p^{2}}} \right)\]
 
 \[\theta_{2} = arctan\left( \frac{- p}{\sqrt{1 - p^{2}}} \right)\]
 
@@ -815,9 +817,9 @@ To illustrate these results, the phase changes \texttt{h2.41} are
 plotted in \texttt{figg:6}. We see that, for all \(p\),
 
 \begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{./pictest/pic6.jpg}}
-\caption{}
+    \centering
+    \includegraphics[width = .7 \textwidth]{figs/NM/pic6.jpg}
+    \caption{} \label{fig:}
 \end{figure}
 
 \[\theta_{2} = \pi - \theta_{1}\]
@@ -833,7 +835,7 @@ quite different. For the case \(p < 0\), we obtain in the same way
 
 Thus, for \(p \gtrless 0\)
 
-{\[\theta_{2} = \pm \pi - \theta_{1}\]}
+\[\theta_{2} = \pm \pi - \theta_{1}\]
 
 For accuracy of the physical mode, \(\theta_{1}\) should closely
 approximate the phase change of the true solution, \emph{p}. For small
@@ -857,7 +859,7 @@ The phase error, thus, is seen to increase sharply as
 
 It may be useful to illustrate the behavior of the two modes obtained
 
-{\[U_{1}^{\left( n \right)} &= U_{1}^{\left( 0 \right)}e^{in\theta 1}\]\[U_{2}^{\left( n \right)} &= U_{2}^{\left| 0 \right|}e^{\text{in}\left( \pm \pi - \theta_{1} \right)}\]}
+\[U_{1}^{\left( n \right)} = U_{1}^{\left( 0 \right)}e^{in\theta 1}\]\[U_{2}^{\left( n \right)} = U_{2}^{\left| 0 \right|}e^{\text{in}\left( \pm \pi - \theta_{1} \right)}\]
 
 in the complex plane. For simplicity, we consider the case
 \(\theta_{1} = \frac{\pi}{8}\) and assume that the imaginary part of the
@@ -869,12 +871,12 @@ by an angle \(\pi - \theta_{1}\). Therefore, the two modes can be
 represented graphically as in \texttt{figg:7}.
 
 \begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{./pictest/pic7.jpg}}
-\caption{}
+    \centering
+    \includegraphics[width = .7 \textwidth]{figs/NM/pic7.jpg}
+    \caption{} \label{fig:}
 \end{figure}
 
-A detailed knowledge of the behaviour of the computaÂ­tional mode may be
+A detailed knowledge of the behaviour of the computational mode may be
 helpful in recognizing its excessive presence in an integration. Thus,
 we plot the real and imaginary parts of the computational mode as
 functions of time. This can be done by using an alternative form of the
@@ -883,13 +885,13 @@ second equation in \texttt{h2.43}
 \[U_{2}^{\left( n \right)} = {\left( - 1 \right)^{n}U}_{2}^{\left( 0 \right)}\left( \cos{n\theta_{1}} - i\sin{n\theta_{2}} \right)\]
 
 or directly from \texttt{figg:7}. We obtain diagrams as shown in
-\texttt{figg:8}. Because of the factor (â1)", both real and imaginary
+\texttt{figg:8}. Because of the factor $(-1)^n$, both real and imaginary
 parts oscillate between time steps.
 
 \begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{./pictest/pic8.jpg}}
-\caption{}
+    \centering
+    \includegraphics[width = .7 \textwidth]{figs/NM/pic8.jpg}
+    \caption{} \label{fig:}
 \end{figure}
 
 \paragraph{\texorpdfstring{\(\left| p \right| = 1\)}{\textbackslash left\textbar{} p \textbackslash right\textbar{} = 1}}\label{left-p-right-1}
@@ -898,7 +900,7 @@ This is a limiting case of the solutions considered for
 \(\left| \text{p} \right| < 1\). \texttt{h2.34} shows that the values of
 \(\lambda\). are now equal,
 
-{\[\lambda_{1} = 2 = ip\]}
+\[\lambda_{1} = 2 = ip\]
 
 Therefore
 
@@ -907,11 +909,11 @@ Therefore
 Thus, both modes are still neutral. Since neither of them has a real
 part, we obtain, for p = Â± 1,
 
-{\[\theta_{1} = \theta_{2} = \pm \frac{\pi}{2}\]}
+\[\theta_{1} = \theta_{2} = \pm \frac{\pi}{2}\]
 
 Therefore, the two modes can be written in the form
 
-{\[U^{\left( n \right)} = U^{\left( 0 \right)}e^{\pm i n\frac{\pi}{2}}\]}
+\[U^{\left( n \right)} = U^{\left( 0 \right)}e^{\pm i n\frac{\pi}{2}}\]
 
 In a complex plane, they rotate by an angle of \(\frac{\pm \pi}{2}\) in
 each time step, while the true solution rotates by an angle of Â± 1
@@ -922,14 +924,14 @@ only. The phase error, thus, is large.
 Both values of \(\lambda\) in \texttt{h2.34} still have imaginary parts
 only, so that
 
-\[\lambda_{1} &= i\left( p + \sqrt{p^{2}} - 1 \right)\]\[\lambda_{2} &= i\left( p - \sqrt{p^{2} - 1} \right)\]
+\[\lambda_{1} = i\left( p + \sqrt{p^{2}} - 1 \right)\]\[\lambda_{2} = i\left( p - \sqrt{p^{2} - 1} \right)\]
 
 where the expressions in parentheses are real. Therefore,
 
-{\[\left| \lambda_{1} \right| = \left| p + \sqrt{p^{2}} - 1 \right|\]\[\left| \lambda_{2} \right| = \left| p - \sqrt{p^{2}} - 1 \right|\]}
+\[\left| \lambda_{1} \right| = \left| p + \sqrt{p^{2}} - 1 \right|\]\[\left| \lambda_{2} \right| = \left| p - \sqrt{p^{2}} - 1 \right|\]
 
-Thus, for \emph{p \textgreater{} 1} we have
-\(\left| \lambda_{1} \right| > 1\), and for \emph{p \textless{} â 1}
+Thus, for $p > 1$ we have
+\(\left| \lambda_{1} \right| > 1\), and for $p< 1$
 \(\left| \lambda_{2} > 1 \right|\). Therefore, for
 \(\left| p > 1 \right|\) the leapfrog scheme is unstable. The
 instability increases sharply as \(\left| \text{p} \right|\) increases
@@ -943,11 +945,11 @@ which is unbounded as \(p \rightarrow 1\)
 Since the two values of \(\lambda\) still have no real parts, we again
 have
 
-{\[\theta_{1} = \theta_{2} = \pm \frac{\pi}{2}\]}
+\[\theta_{1} = \theta_{2} = \pm \frac{\pi}{2}\]
 
 The two modes for \(p \gtrless 1\), can thus be written as
 
-{\[U_{1}^{\left( n \right)} &= \left| p + \sqrt{p^{2} - 1} \right|^{n}U_{1}^{\left( 0 \right)}e^{\pm in\frac{\pi}{2}}\]\[U_{2}^{\left( n \right)} &= \left| p - \sqrt{p^{2} - 1} \right|^{n}U_{2}^{\left( 0 \right)}e^{\pm in\frac{\pi}{2}}\]}
+\[U_{1}^{\left( n \right)} = \left| p + \sqrt{p^{2} - 1} \right|^{n}U_{1}^{\left( 0 \right)}e^{\pm in\frac{\pi}{2}}\]\[U_{2}^{\left( n \right)} = \left| p - \sqrt{p^{2} - 1} \right|^{n}U_{2}^{\left( 0 \right)}e^{\pm in\frac{\pi}{2}}\]
 
 In the complex plane, both modes again rotate by an angle of
 \(\frac{\pm \pi}{2}\) in each time step. However, this time the
@@ -961,9 +963,9 @@ the results appear unsatisfactory, it is a good idea to
 check for the presence of growing oscillations of that period.
 
 \begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{./pictest/pic9.jpg}}
-\caption{}
+    \centering
+    \includegraphics[width = .7 \textwidth]{figs/NM/pic9.jpg}
+    \caption{} \label{fig:}
 \end{figure}
 
 To sum up, advantages of the leapfrog scheme are that it is a very
@@ -990,7 +992,7 @@ We consider, finally, stability and other properties of the
 Adams-Bashforth scheme \texttt{h1.10}. Applied to the oscillation
 equation it gives
 
-{\[U^{( n + 1 )} = U^{(n)} + i\omega\Delta t \left( \frac{3}{2}U^{( n )} - \frac{1}{2}U^{\left( n - 1 \right)} \right)\]}
+\[U^{( n + 1 )} = U^{(n)} + i\omega\Delta t \left( \frac{3}{2}U^{( n )} - \frac{1}{2}U^{\left( n - 1 \right)} \right)\]
 
 Substituting the relations \texttt{h2.33} we find
 
@@ -1001,7 +1003,7 @@ We have, of course, again obtained a second degree equation for
 
 It has the solutions
 
-{\[\lambda_{1} = \frac{1}{2}\left( 1 + i\frac{3}{2}p + \sqrt{1 - \frac{9}{4}p^{2} + ip} \right)\]\[\lambda_{2} = \frac{1}{2}\left( 1 + i\frac{3}{2}p - \sqrt{1 - \frac{9}{4}}p^{2} + ip \right)\]}
+\[\lambda_{1} = \frac{1}{2}\left( 1 + i\frac{3}{2}p + \sqrt{1 - \frac{9}{4}p^{2} + ip} \right)\]\[\lambda_{2} = \frac{1}{2}\left( 1 + i\frac{3}{2}p - \sqrt{1 - \frac{9}{4}}p^{2} + ip \right)\]
 
 Thus, as \(p \rightarrow 0\), \(\lambda_{1} \rightarrow 1 \) while
 \(\lambda_{2} \rightarrow 0\). We see that the solution associated with
@@ -1027,11 +1029,11 @@ Now, after rearranging the terms these series can be written as
 
 which can be used to obtain the amplification factors
 
-{\[\left| \lambda_{1} \right| &= \left( 1 + \frac{1}{2}p^{4} + \ldots \right)^{\frac{1}{2}}\]\[\left| \lambda_{2} \right| &= \left( \frac{1}{4}p^{2} + \ldots \right)^{\frac{1}{2}}\]}
+\[\left| \lambda_{1} \right| = \left( 1 + \frac{1}{2}p^{4} + \ldots \right)^{\frac{1}{2}}\]\[\left| \lambda_{2} \right| = \left( \frac{1}{4}p^{2} + \ldots \right)^{\frac{1}{2}}\]
 
 The higher order terms have been omitted. A final expansion gives
 
-{\[\left| \lambda_{1} \right| &= 1 + \frac{1}{4}p^{4} + \ldots\]\[\left| \lambda_{2} \right| &= \frac{1}{2}p + \ldots\]}
+\[\left| \lambda_{1} \right| = 1 + \frac{1}{4}p^{4} + \ldots\]\[\left| \lambda_{2} \right| = \frac{1}{2}p + \ldots\]
 
 Expressions \texttt{h2.52} and/or \texttt{h2.53} show that the physical
 mode of the Adams-Bashforth scheme is always unstable. However, as for
@@ -1074,7 +1076,7 @@ equation}}{Properties of schemes applied to the friction equation}}\label{proper
 We shall now consider the properties of schemes when applied to the
 equation
 
-{\[\frac{d U}{d t} = - \kappa U, \qquad U = U\left( t \right), \qquad \kappa > 0\]}
+\[\frac{d U}{d t} = - \kappa U, \qquad U = U\left( t \right), \qquad \kappa > 0\]
 
 We shall call this equation the friction equation.
 
@@ -1095,13 +1097,13 @@ we obtain
 \[\frac{\text{dU}}{\text{dt}} = - \sigma k^{2}U\]
 
 \begin{description}
-\item[This is equivalent to \texttt{k3.1} if we substitute]
-\(x \equiv \sigma k^{2}\).
+    \item[This is equivalent to \texttt{k3.1} if we substitute]
+    \(x \equiv \sigma k^{2}\).
 \end{description}
 
 The general solution of \texttt{k3.1} is
 
-{\[U\left( t \right) = U\left( 0 \right)e^{- \kappa t}\]}
+\[U\left( t \right) = U\left( 0 \right)e^{- \kappa t}\]
 
 Thus, both the real and the imaginary part decrease exponentially with
 time.
@@ -1111,21 +1113,21 @@ analyzed using the von Neumann method. As in the previous section, we
 consider first the non-iterative two level scheme \texttt{h2.6}. Applied
 to the friction equation, \texttt{h2.6} gives
 
-{\[U^{(n + 1)} = U^{n} - \kappa\Delta t \left( \alpha U^{( n )} + \beta U^{\left( n + 1 \right)} \right)\]}
+\[U^{(n + 1)} = U^{n} - \kappa\Delta t \left( \alpha U^{( n )} + \beta U^{\left( n + 1 \right)} \right)\]
 
 Writing
 
-{\[K \equiv \kappa \Delta t\]}
+\[K \equiv \kappa \Delta t\]
 
 we obtain, rearranging the terms in \texttt{k3.3},
 
-{\[U^{\left( n + 1 \right)} = \frac{1 - \alpha K}{1 + \beta K}U^{\left( n \right)}\]}
+\[U^{\left( n + 1 \right)} = \frac{1 - \alpha K}{1 + \beta K}U^{\left( n \right)}\]
 
 For the Euler scheme \(\alpha = 1`and :math:\)beta = 0`; thus,
 \texttt{k3.5} shows that the Euler scheme is now stable if
 \(\left| 1 - K \leq 1 \right|\), that is, if
 
-{\[0 < K \leq 2\]}
+\[0 < K \leq 2\]
 
 Thus we see that the stability criteria of particular schemes do not
 have to be the same when they are applied to different equations. In the
@@ -1145,7 +1147,7 @@ For the trapezoidal scheme \(\alpha = \frac{1}{2}`and
 
 Considering the iterative two level scheme \texttt{h2.18} we obtain
 
-{\[U^{\left( n + 1 \right)} = \left( 1 - K + \beta K^{2} \right)U^{\left( n \right)}\]}
+\[U^{\left( n + 1 \right)} = \left( 1 - K + \beta K^{2} \right)U^{\left( n \right)}\]
 
 Therefore, both the Matsuno and the Heun scheme are stable for
 sufficiently small values of \emph{K}.
@@ -1154,7 +1156,7 @@ It is instructive to consider in some detail the behaviour of the
 numerical solution obtained using the leapfrog scheme. Applied to
 \texttt{k3.1} it gives
 
-{\[U^{\left( n + 1 \right)} = U^{\left( n - 1 \right)} - 2\Delta t U^{\left( n \right)}\]}
+\[U^{\left( n + 1 \right)} = U^{\left( n - 1 \right)} - 2\Delta t U^{\left( n \right)}\]
 
 The equation for the amplification factor is
 
@@ -1162,7 +1164,7 @@ The equation for the amplification factor is
 
 giving the solutions
 
-{\[\lambda_{1} = - K + \sqrt{1 + K^{2}}\]\[\lambda_{2} = - K - \sqrt{1 + K^{2}}\]}
+\[\lambda_{1} = - K + \sqrt{1 + K^{2}}\]\[\lambda_{2} = - K - \sqrt{1 + K^{2}}\]
 
 As \(k \rightarrow 0, \quad \lambda \rightarrow 1,\) while
 \(\lambda_{2} \rightarrow - 1\) thus, the solution associated with
@@ -1194,14 +1196,14 @@ values of \(U^{\left( n \right)}\), even when this difference is equal
 to zero initially.
 
 \begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio]{./pictest/pic10.jpg}}
-\caption{}
+    \centering
+    \includegraphics[width = .7 \textwidth]{figs/NM/pic10.jpg}
+    \caption{} \label{fig:}
 \end{figure}
 
 Finally, for the Adams-Bashforth scheme we obtain
 
-{\[\lambda = \frac{1}{2}\left( 1 - \frac{3}{2}K \pm \sqrt{1 - K\frac{9}{4}K^{2}} \right)\]}
+\[\lambda = \frac{1}{2}\left( 1 - \frac{3}{2}K \pm \sqrt{1 - K\frac{9}{4}K^{2}} \right)\]
 
 The Adams-Bashforth scheme, thus, is stable for suffiÂ­ciently small
 values of K. The computational mode is damped.
@@ -1213,7 +1215,7 @@ A natural question to ask at this point is what can we do if, for
 example, the equation contains both the oscillaÂ­tion and the friction
 term, that is
 
-{\[\frac{\text{dU}}{\text{Dt}} = i\omega U - \kappa U\]}
+\[\frac{\text{dU}}{\text{Dt}} = i\omega U - \kappa U\]
 
 Here we might like to use the leapfrog scheme because of the oscillation
 term \(i\omega U\), but we know that it cannot be used for the friction

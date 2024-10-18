@@ -5,7 +5,21 @@ set (LATEX DEFAULT BUILD pdflatex)
 #set(LATEX_SYNCTEX_FLAGS "-synctex=1")
 project(cm-notes NONE)
 include(UseLATEX.cmake)
-add_latex_document(notes.tex TARGET_NAME notes
+
+add_latex_document(cm.tex TARGET_NAME cm
+        INPUTS setup.sty commands.sty theorems.sty
+        CM/introduction.tex
+        CM/atmospheric-general-circulation.tex
+        CM/oceanic-general-circulation.tex
+
+        BIBFILES bibliography.bib
+        USE_BIBLATEX
+        IMAGE_DIRS figs/CM
+        #  USE_INDEX
+        EXCLUDE_FROM_ALL
+)
+
+add_latex_document(gd.tex TARGET_NAME gd
         INPUTS setup.sty commands.sty theorems.sty
         GD/introduction.tex
         GD/circulation-theorems-ertel-potential-vorticity.tex
@@ -22,15 +36,26 @@ add_latex_document(notes.tex TARGET_NAME notes
         GD/theory-symmetric-circulation.tex
         GD/tropical-waves.tex
         GD/appendix.tex
-        NM/foreword.tex
-        NM/introduction.tex
-        NM/time-differencing-scheme.tex
-        NM/advection-equation.tex
-        NM/gravity-wave-equations.tex
 
         BIBFILES bibliography.bib
         USE_BIBLATEX
-        IMAGE_DIRS figs/GD figs/NM
+        IMAGE_DIRS figs/GD
+        #  USE_INDEX
+        EXCLUDE_FROM_ALL
+)
+
+
+add_latex_document(nm.tex TARGET_NAME nm
+        INPUTS setup.sty commands.sty theorems.sty
+         NM/foreword.tex
+         NM/introduction.tex
+         NM/time-differencing-scheme.tex
+         NM/advection-equation.tex
+         NM/gravity-wave-equations.tex
+
+        BIBFILES bibliography.bib
+        USE_BIBLATEX
+        IMAGE_DIRS figs/NM
         #  USE_INDEX
         EXCLUDE_FROM_ALL
 )
